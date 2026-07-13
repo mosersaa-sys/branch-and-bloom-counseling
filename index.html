@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branch &amp; Bloom Counseling — Telehealth Therapy for Children, Teens &amp; Adults</title>
+  <meta name="description" content="Warm, secure telehealth counseling for children (8+), teens, and adults. Individual, family, and couples therapy grounded in CBT and DBT skills.">
+  <link rel="canonical" href="https://branch-and-bloom-counseling.vercel.app/">
+  <meta name="theme-color" content="#3E4F3A">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Branch &amp; Bloom Counseling">
+  <meta property="og:title" content="Branch &amp; Bloom Counseling — Telehealth Therapy for Children, Teens &amp; Adults">
+  <meta property="og:description" content="Warm, secure telehealth counseling for children (8+), teens, and adults. Individual, family, and couples therapy grounded in CBT and DBT skills.">
+  <meta property="og:url" content="https://branch-and-bloom-counseling.vercel.app/">
+  <meta property="og:image" content="https://branch-and-bloom-counseling.vercel.app/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Branch & Bloom Counseling — warm, secure telehealth therapy for children, teens and adults">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Branch &amp; Bloom Counseling — Telehealth Therapy">
+  <meta name="twitter:description" content="Warm, secure telehealth counseling for children (8+), teens, and adults — grounded in CBT and DBT skills.">
+  <meta name="twitter:image" content="https://branch-and-bloom-counseling.vercel.app/og-image.jpg">
+
+  <!-- Beautiful serif headings + gentle sans body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Warm, growing palette — sage, moss, blush, cream */
+      --cream:      #FBF7F0;
+      --cream-deep: #F4EDE1;
+      --sage:       #8FA98A;
+      --moss:       #5C7256;
+      --moss-deep:  #3E4F3A;
+      --bark:       #4A423A;
+      --blush:      #E8C4B8;
+      --blush-soft: #F3E0D8;
+      --terracotta: #C68566;
+      --gold:       #D9A566;
+      --ink:        #33302B;
+      --muted:      #6E675E;
+      --line:       rgba(74, 66, 58, 0.12);
+
+      --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --sans:  'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      --shadow-soft: 0 18px 50px -24px rgba(62, 79, 58, 0.35);
+      --shadow-card: 0 12px 40px -20px rgba(62, 79, 58, 0.28);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      color: var(--moss-deep);
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .wrap {
+      width: min(1180px, 92vw);
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--terracotta);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 26px; height: 1.5px;
+      background: var(--terracotta);
+      display: inline-block;
+    }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55em;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.98rem;
+      padding: 0.95em 1.7em;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+      border: 1.5px solid transparent;
+    }
+    .btn-primary {
+      background: var(--moss);
+      color: var(--cream);
+      box-shadow: 0 12px 26px -12px rgba(92, 114, 86, 0.7);
+    }
+    .btn-primary:hover { background: var(--moss-deep); transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--moss-deep);
+      border-color: rgba(92, 114, 86, 0.4);
+    }
+    .btn-ghost:hover { background: rgba(143, 169, 138, 0.14); transform: translateY(-2px); }
+
+    /* ---------- Nav ---------- */
+    header.nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(251, 247, 240, 0.82);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--moss-deep);
+      letter-spacing: -0.01em;
+    }
+    .brand .mark {
+      width: 40px; height: 40px;
+      flex: none;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+    .nav-links a.link { color: var(--bark); transition: color .2s; }
+    .nav-links a.link:hover { color: var(--moss); }
+    .nav-cta { display: flex; align-items: center; gap: 1.2rem; }
+    .menu-toggle { display: none; background: none; border: none; cursor: pointer; }
+
+    @media (max-width: 860px) {
+      .nav-links .link { display: none; }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      padding: clamp(3.5rem, 8vw, 7rem) 0 clamp(4rem, 9vw, 8rem);
+      background:
+        radial-gradient(120% 90% at 88% 8%, rgba(232, 196, 184, 0.38) 0%, rgba(232, 196, 184, 0) 55%),
+        radial-gradient(90% 80% at 6% 92%, rgba(143, 169, 138, 0.30) 0%, rgba(143, 169, 138, 0) 60%),
+        var(--cream);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.7rem, 6vw, 4.4rem);
+      font-weight: 500;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--terracotta);
+      font-weight: 400;
+    }
+    .hero p.lead {
+      font-size: clamp(1.08rem, 1.6vw, 1.28rem);
+      color: var(--muted);
+      margin: 1.6rem 0 2.3rem;
+      max-width: 34ch;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .hero-note {
+      margin-top: 2.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .hero-note svg { flex: none; }
+
+    /* Hero art — outer wrapper does NOT clip, so float cards bleed outside */
+    .hero-art {
+      position: relative;
+      aspect-ratio: 1 / 1.02;
+    }
+    /* Inner slider clips the images to rounded corners */
+    .hero-slider {
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      background: linear-gradient(160deg, #DCE6D6 0%, #C4D6BC 45%, #A9C4A0 100%);
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: scale(1.04);
+      transition: opacity 1.3s ease, transform 6s ease;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* subtle warm wash so overlays stay legible on any photo */
+    .hero-slider::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(62,79,58,0) 55%, rgba(62,79,58,0.18) 100%);
+      pointer-events: none;
+    }
+    /* dots */
+    .hero-dots {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      z-index: 4;
+    }
+    .hero-dots button {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: none;
+      padding: 0;
+      background: rgba(251, 247, 240, 0.6);
+      cursor: pointer;
+      transition: background .3s, width .3s;
+    }
+    .hero-dots button.active { background: var(--cream); width: 22px; border-radius: 100px; }
+    .hero-art .float-card {
+      position: absolute;
+      z-index: 5;
+      background: rgba(251, 247, 240, 0.94);
+      backdrop-filter: blur(6px);
+      border-radius: 16px;
+      padding: 0.85rem 1.1rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--moss-deep);
+    }
+    .float-card .dot { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+    .fc-1 { top: 8%; left: -6%; }
+    .fc-2 { bottom: 10%; right: -7%; }
+    .fc-3 { bottom: 38%; left: -9%; }
+
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-art { max-width: 460px; margin-top: 1rem; }
+      .fc-1 { left: 2%; } .fc-2 { right: 2%; } .fc-3 { left: 2%; }
+    }
+
+    /* ---------- Trust strip ---------- */
+    .strip {
+      background: var(--moss-deep);
+      color: var(--cream);
+      padding: 1.6rem 0;
+    }
+    .strip-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1.5rem 2rem;
+      align-items: center;
+    }
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 600;
+      font-size: 0.98rem;
+      color: rgba(251, 247, 240, 0.92);
+    }
+    .strip-item svg { flex: none; opacity: 0.9; }
+
+    /* ---------- Sections ---------- */
+    section { padding: clamp(4rem, 8vw, 7rem) 0; }
+    .section-head { max-width: 44rem; margin-bottom: 3.2rem; }
+    .section-head.center { margin-inline: auto; text-align: center; }
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-top: 1rem;
+    }
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-top: 1.1rem;
+    }
+
+    /* ---------- Services ---------- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+    }
+    .svc-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 2.2rem 2rem;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .svc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card); border-color: rgba(143,169,138,0.5); }
+    .svc-icon {
+      width: 58px; height: 58px;
+      border-radius: 16px;
+      display: grid; place-items: center;
+      margin-bottom: 1.4rem;
+    }
+    .svc-card h3 { font-size: 1.5rem; margin-bottom: 0.6rem; }
+    .svc-card p { color: var(--muted); font-size: 1rem; }
+    .svc-card .tag {
+      margin-top: 1.3rem;
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--moss);
+    }
+
+    @media (max-width: 860px) { .services-grid { grid-template-columns: 1fr; } }
+
+    /* ---------- Who we help ---------- */
+    .who {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--cream-deep) 100%);
+    }
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+    .who-card {
+      border-radius: var(--radius);
+      padding: 2rem 1.8rem;
+      color: var(--cream);
+      position: relative;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .who-card h3 { color: var(--cream); font-size: 1.65rem; margin-bottom: 0.4rem; }
+    .who-card p { font-size: 0.98rem; color: rgba(251,247,240,0.9); }
+    .who-card .age {
+      position: absolute; top: 1.4rem; left: 1.8rem;
+      font-family: var(--serif); font-style: italic;
+      font-size: 1.05rem; color: rgba(251,247,240,0.85);
+    }
+    .who-1 { background: linear-gradient(155deg, #7C9A76, #506B4A); }
+    .who-2 { background: linear-gradient(155deg, #C68566, #A5633F); }
+    .who-3 { background: linear-gradient(155deg, #9AAF8F, #5C7256); }
+    @media (max-width: 860px) { .who-grid { grid-template-columns: 1fr; } }
+
+    /* ---------- Approach (CBT / DBT) ---------- */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    .approach-visual {
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(217, 165, 102, 0.4), transparent 55%),
+        linear-gradient(160deg, #EBD9CB, #E8C4B8);
+      aspect-ratio: 4/4.4;
+      position: relative;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+    .approach-visual .ring {
+      position: absolute; border-radius: 50%;
+      border: 1.5px dashed rgba(74,66,58,0.22);
+    }
+    .modality {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .modality:last-child { border-bottom: none; }
+    .modality .badge {
+      flex: none;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.05rem;
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      display: grid; place-items: center;
+      background: var(--moss); color: var(--cream);
+    }
+    .modality.dbt .badge { background: var(--terracotta); }
+    .modality h3 { font-size: 1.35rem; margin-bottom: 0.3rem; }
+    .modality p { color: var(--muted); font-size: 1rem; }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+    .pill {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      padding: 0.5em 1.1em;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--moss-deep);
+    }
+
+    @media (max-width: 860px) { .approach-grid { grid-template-columns: 1fr; } .approach-visual { max-width:460px; } }
+
+    /* ---------- Telehealth band ---------- */
+    .tele {
+      background: var(--moss-deep);
+      color: var(--cream);
+      border-radius: 30px;
+      padding: clamp(2.5rem, 5vw, 4rem);
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .tele::before {
+      content:""; position:absolute; inset:0;
+      background: radial-gradient(70% 120% at 100% 0%, rgba(217,165,102,0.28), transparent 60%);
+      pointer-events:none;
+    }
+    .tele h2 { color: var(--cream); font-size: clamp(1.9rem, 3.5vw, 2.8rem); position: relative; }
+    .tele p { color: rgba(251,247,240,0.88); margin-top: 1rem; font-size: 1.08rem; position: relative; }
+    .tele-points { list-style: none; display: grid; gap: 1rem; position: relative; }
+    .tele-points li { display: flex; gap: 0.8rem; align-items: flex-start; font-weight: 600; }
+    .tele-points svg { flex: none; margin-top: 2px; }
+    @media (max-width: 780px) { .tele { grid-template-columns: 1fr; } }
+
+    /* ---------- Steps ---------- */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+      counter-reset: step;
+    }
+    .step {
+      padding: 2rem 1.8rem;
+      border-radius: var(--radius);
+      background: #fff;
+      border: 1px solid var(--line);
+      position: relative;
+    }
+    .step::before {
+      counter-increment: step;
+      content: "0" counter(step);
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      color: var(--blush);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.6rem;
+      line-height: 1;
+    }
+    .step h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+    .step p { color: var(--muted); font-size: 0.98rem; }
+    @media (max-width: 860px) { .steps-grid { grid-template-columns: 1fr; } }
+
+    /* ---------- Quote ---------- */
+    .quote-band { background: var(--blush-soft); }
+    .quote {
+      max-width: 52rem; margin-inline: auto; text-align: center;
+    }
+    .quote blockquote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+      line-height: 1.35;
+      color: var(--moss-deep);
+    }
+    .quote .attrib { margin-top: 1.6rem; font-weight: 700; color: var(--terracotta); letter-spacing: 0.03em; }
+
+    /* ---------- CTA — bold & playful ---------- */
+    .cta-final {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      color: var(--cream);
+      padding: clamp(5rem, 11vw, 9rem) 0;
+      background:
+        radial-gradient(70% 90% at 15% 10%, rgba(217,165,102,0.35), transparent 55%),
+        radial-gradient(65% 90% at 88% 85%, rgba(232,196,184,0.32), transparent 55%),
+        linear-gradient(155deg, #52693F 0%, #3E4F3A 45%, #2F3D2C 100%);
+    }
+    /* playful dotted texture */
+    .cta-final::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(251,247,240,0.10) 1.5px, transparent 1.6px);
+      background-size: 26px 26px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .cta-final .wrap { position: relative; z-index: 3; }
+    .cta-final .eyebrow { color: var(--gold); }
+    .cta-final .eyebrow::before { background: var(--gold); }
+    .cta-final h2 {
+      color: var(--cream);
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      max-width: 18ch; margin: 1rem auto 1.3rem;
+    }
+    .cta-final h2 em { font-style: italic; color: var(--blush); }
+    .cta-final p { color: rgba(251,247,240,0.86); font-size: 1.18rem; max-width: 42ch; margin: 0 auto 2.4rem; }
+    /* fun, poppy button on the dark band */
+    .btn-fun {
+      background: var(--gold);
+      color: #3E2F16;
+      box-shadow: 0 16px 30px -12px rgba(217,165,102,0.7);
+      font-size: 1.05rem;
+      padding: 1.05em 2em;
+    }
+    .btn-fun:hover { background: #E6B676; transform: translateY(-3px) scale(1.02); }
+    .btn-cream {
+      background: transparent; color: var(--cream);
+      border-color: rgba(251,247,240,0.5);
+    }
+    .btn-cream:hover { background: rgba(251,247,240,0.12); transform: translateY(-3px); }
+
+    /* four floating photos overlaying the CTA */
+    .cta-float {
+      position: absolute;
+      width: clamp(96px, 12vw, 172px);
+      aspect-ratio: 3 / 4;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 5px solid var(--cream);
+      box-shadow: 0 34px 60px -20px rgba(0,0,0,0.55), 0 10px 24px -12px rgba(0,0,0,0.45);
+      z-index: 2;
+      will-change: transform;
+    }
+    .cta-float img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .cta-float.f1 { top: 8%;  left: 4%;  transform: rotate(-8deg);  animation: floaty 7s ease-in-out infinite; }
+    .cta-float.f2 { bottom: 9%; left: 9%; transform: rotate(6deg);   animation: floaty 8s ease-in-out infinite 0.6s; }
+    .cta-float.f3 { top: 11%; right: 6%; transform: rotate(7deg);    animation: floaty 7.5s ease-in-out infinite 0.3s; }
+    .cta-float.f4 { bottom: 7%; right: 4%; transform: rotate(-7deg); animation: floaty 8.5s ease-in-out infinite 0.9s; }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0) rotate(var(--rot)); }
+      50%      { transform: translateY(-16px) rotate(var(--rot)); }
+    }
+    .cta-float.f1 { --rot: -8deg; }
+    .cta-float.f2 { --rot: 6deg; }
+    .cta-float.f3 { --rot: 7deg; }
+    .cta-float.f4 { --rot: -7deg; }
+
+    /* keep photos from colliding with text on smaller screens */
+    @media (max-width: 1024px) {
+      .cta-float { width: clamp(78px, 15vw, 120px); }
+      .cta-float.f2, .cta-float.f3 { display: none; }
+    }
+    @media (max-width: 620px) {
+      .cta-float { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cta-float { animation: none !important; }
+    }
+
+    /* ---------- Footer ---------- */
+    footer.site {
+      background: var(--moss-deep);
+      color: rgba(251,247,240,0.85);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 2.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(251,247,240,0.15);
+    }
+    footer.site .brand { color: var(--cream); margin-bottom: 1rem; }
+    footer.site h4 { color: var(--cream); font-family: var(--sans); font-weight: 700; font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.1rem; }
+    footer.site ul { list-style: none; display: grid; gap: 0.7rem; }
+    footer.site a:hover { color: var(--cream); }
+    footer.site p.blurb { max-width: 30ch; font-size: 0.96rem; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+      padding-top: 1.6rem; font-size: 0.85rem; color: rgba(251,247,240,0.6);
+    }
+    @media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#" class="brand" aria-label="Branch and Bloom Counseling home">
+        <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M20 36V16" stroke="#5C7256" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M20 22C20 22 14 21 11 17C8 13 9 7 9 7C9 7 15 7 18 11C21 15 20 22 20 22Z" fill="#8FA98A"/>
+          <path d="M20 19C20 19 25 17 27 13C29 9 27 4 27 4C27 4 22 6 20 10C18 14 20 19 20 19Z" fill="#C68566"/>
+          <circle cx="20" cy="26" r="2.6" fill="#D9A566"/>
+        </svg>
+        Branch &amp; Bloom
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="link" href="#services">Services</a>
+        <a class="link" href="#who">Who We Help</a>
+        <a class="link" href="#approach">Our Approach</a>
+        <a class="link" href="#start">How It Works</a>
+        <div class="nav-cta">
+          <a class="btn btn-primary" href="#contact">Book a Consult</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Telehealth Counseling &middot; Warm &amp; Practical</span>
+        <h1 style="margin-top:1.3rem;">Room to grow, <em>right where you are.</em></h1>
+        <p class="lead">Compassionate, evidence-based therapy for children, teens, and adults — delivered securely from the comfort of home.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Schedule a Free Consult
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#services">Explore Services</a>
+        </div>
+        <div class="hero-note">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 1l7 3v5c0 4.5-3 8-7 10C6 17 3 13.5 3 9V4l7-3z" fill="#8FA98A"/><path d="M7 10l2 2 4-4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Secure, HIPAA-conscious video sessions
+        </div>
+      </div>
+
+      <div class="hero-art reveal">
+        <!-- Autoplaying photo slider -->
+        <div class="hero-slider" role="group" aria-roledescription="carousel" aria-label="Clients connecting through telehealth counseling">
+          <div class="hero-slide active"><img src="images/hero-1.webp" alt="Smiling older couple waving during a video call at home" loading="eager" fetchpriority="high"></div>
+          <div class="hero-slide"><img src="images/hero-2.webp" alt="Young couple laughing together while looking at a phone" loading="lazy"></div>
+          <div class="hero-slide"><img src="images/hero-3.webp" alt="Young man smiling during a video session on his laptop at home" loading="lazy"></div>
+          <div class="hero-slide"><img src="images/hero-4.webp" alt="Father and young son connecting on a laptop together" loading="lazy"></div>
+          <div class="hero-slide"><img src="images/hero-5.webp" alt="Woman enjoying a warm drink during an online counseling session" loading="lazy"></div>
+          <div class="hero-dots" role="tablist" aria-label="Choose slide">
+            <button class="active" aria-label="Slide 1"></button>
+            <button aria-label="Slide 2"></button>
+            <button aria-label="Slide 3"></button>
+            <button aria-label="Slide 4"></button>
+            <button aria-label="Slide 5"></button>
+          </div>
+        </div>
+        <div class="float-card fc-1">
+          <span class="dot" style="background:#E8F0E4;">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 3v14M3 10h14" stroke="#5C7256" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          Ages 8 &amp; up
+        </div>
+        <div class="float-card fc-2">
+          <span class="dot" style="background:#F3E0D8;">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 5h12v9H8l-4 3z" stroke="#C68566" stroke-width="1.7" fill="none" stroke-linejoin="round"/></svg>
+          </span>
+          Individual &middot; Family &middot; Couples
+        </div>
+        <div class="float-card fc-3">
+          <span class="dot" style="background:#EEE6D4;">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2a8 8 0 100 16 8 8 0 000-16z" stroke="#D9A566" stroke-width="1.6" fill="none"/><path d="M10 6v4l3 2" stroke="#D9A566" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          CBT &amp; DBT skills
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST STRIP ===== -->
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="strip-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="10" rx="2" stroke="#FBF7F0" stroke-width="1.6"/><path d="M14 8l4-2v8l-4-2" stroke="#FBF7F0" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        100% secure telehealth
+      </div>
+      <div class="strip-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="7" cy="7" r="3" stroke="#FBF7F0" stroke-width="1.6"/><path d="M2 17c0-3 2.5-5 5-5s5 2 5 5" stroke="#FBF7F0" stroke-width="1.6"/><path d="M13 5a3 3 0 010 6" stroke="#FBF7F0" stroke-width="1.6"/></svg>
+        Children, teens &amp; adults
+      </div>
+      <div class="strip-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2.2 4.6 5 .7-3.6 3.5.9 5L10 13.9 5.5 15.8l.9-5L2.8 7.3l5-.7L10 2z" stroke="#FBF7F0" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        Evidence-based CBT &amp; DBT
+      </div>
+      <div class="strip-item">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 18C6 14.5 3 11.5 3 8a4 4 0 017-2.6A4 4 0 0117 8c0 3.5-3 6.5-7 10z" stroke="#FBF7F0" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Warmth in every session
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center;">What We Offer</span>
+        <h2>Counseling shaped around your life</h2>
+        <p>Every relationship is different. We offer three focused formats — all provided entirely through secure, telehealth platforms.</p>
+      </div>
+      <div class="services-grid">
+        <article class="svc-card reveal">
+          <div class="svc-icon" style="background:#E8F0E4;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#5C7256" stroke-width="1.8"/><path d="M5 20c0-3.9 3.1-6 7-6s7 2.1 7 6" stroke="#5C7256" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Individual Counseling</h3>
+          <p>One-on-one support to work through anxiety, big transitions, and emotional overwhelm — building tools that last well beyond our sessions.</p>
+          <span class="tag">For ages 8+ &amp; adults</span>
+        </article>
+
+        <article class="svc-card reveal">
+          <div class="svc-icon" style="background:#F3E0D8;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3" stroke="#C68566" stroke-width="1.8"/><circle cx="17" cy="10" r="2.4" stroke="#C68566" stroke-width="1.8"/><path d="M3 19c0-3 2.2-5 5-5s5 2 5 5M14 19c0-2 1.4-3.6 3-3.6" stroke="#C68566" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Family Counseling</h3>
+          <p>Space for families to be heard, rebuild connection, and learn shared language for navigating conflict, change, and growing up.</p>
+          <span class="tag">Parents &amp; children together</span>
+        </article>
+
+        <article class="svc-card reveal">
+          <div class="svc-icon" style="background:#EEE6D4;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 20C8 16.5 4 13.8 4 9.8A3.8 3.8 0 0112 7a3.8 3.8 0 018 2.8c0 4-4 6.7-8 10.2z" stroke="#D9A566" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Couples Counseling</h3>
+          <p>Warm, structured guidance for partners who want to communicate better, repair trust, and feel like a team again.</p>
+          <span class="tag">For adult partners</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHO WE HELP ===== -->
+  <section id="who" class="who">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Who We Help</span>
+        <h2>Care for every season of growing</h2>
+        <p>From the early years of big feelings to the full complexity of adult life, we meet each person with patience and respect.</p>
+      </div>
+      <div class="who-grid">
+        <div class="who-card who-1 reveal">
+          <span class="age">Ages 8+</span>
+          <h3>Children</h3>
+          <p>Playful, developmentally-attuned support that helps kids name their feelings and feel safe being themselves.</p>
+        </div>
+        <div class="who-card who-2 reveal">
+          <span class="age">Teens &amp; Adolescents</span>
+          <h3>Teens</h3>
+          <p>A judgment-free place to navigate identity, pressure, and change — with practical skills for the hard days.</p>
+        </div>
+        <div class="who-card who-3 reveal">
+          <span class="age">Adults</span>
+          <h3>Adults</h3>
+          <p>Support for stress, relationships, and life transitions, so you can move forward with clarity and resilience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== APPROACH ===== -->
+  <section id="approach">
+    <div class="wrap approach-grid">
+      <div class="approach-visual reveal" aria-hidden="true">
+        <div class="ring" style="width:78%; height:78%;"></div>
+        <div class="ring" style="width:54%; height:54%;"></div>
+        <div class="ring" style="width:30%; height:30%;"></div>
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M60 96V52" stroke="#5C7256" stroke-width="4" stroke-linecap="round"/>
+          <path d="M60 62C60 62 42 60 34 48C26 36 30 20 30 20C30 20 48 22 56 34C64 46 60 62 60 62Z" fill="#8FA98A"/>
+          <path d="M60 54C60 54 74 48 80 36C86 24 80 12 80 12C80 12 66 18 62 30C58 42 60 54 60 54Z" fill="#C68566"/>
+          <circle cx="60" cy="72" r="7" fill="#D9A566"/>
+        </svg>
+      </div>
+
+      <div class="approach-copy reveal">
+        <span class="eyebrow">Our Approach</span>
+        <h2 style="font-size:clamp(1.9rem,4vw,2.8rem); margin:1rem 0 0.6rem;">Practical skills, gently taught</h2>
+        <p style="color:var(--muted); font-size:1.08rem; margin-bottom:0.6rem;">We root our work in two proven, skills-based modalities — always adapted to the person in front of us.</p>
+
+        <div class="modality cbt">
+          <div class="badge">CBT</div>
+          <div>
+            <h3>Cognitive Behavioral Therapy</h3>
+            <p>Understanding how thoughts, feelings, and actions connect — and learning gentle ways to shift the patterns that keep us stuck.</p>
+          </div>
+        </div>
+        <div class="modality dbt">
+          <div class="badge">DBT</div>
+          <div>
+            <h3>DBT Skills Training</h3>
+            <p>Concrete tools for regulating emotions, tolerating distress, and staying grounded — especially through big transitions.</p>
+          </div>
+        </div>
+
+        <div class="pill-row">
+          <span class="pill">Managing transitions</span>
+          <span class="pill">Regulating emotions</span>
+          <span class="pill">Building resilience</span>
+          <span class="pill">Long-term coping tools</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TELEHEALTH BAND ===== -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="tele reveal">
+        <div>
+          <span class="eyebrow" style="color:var(--gold);">Fully Telehealth</span>
+          <h2 style="margin-top:1rem;">Therapy that comes to you</h2>
+          <p>No commute, no waiting room — just meaningful connection from wherever you feel most comfortable. All sessions are held on secure, private video platforms.</p>
+        </div>
+        <ul class="tele-points">
+          <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#8FA98A"/><path d="M6 10l3 3 5-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Meet from home, school breaks, or on the go</li>
+          <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#8FA98A"/><path d="M6 10l3 3 5-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Private, encrypted, HIPAA-conscious video</li>
+          <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#8FA98A"/><path d="M6 10l3 3 5-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Flexible scheduling that fits real life</li>
+          <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" fill="#8FA98A"/><path d="M6 10l3 3 5-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Same trusted care, wherever you are</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="start">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center;">How It Works</span>
+        <h2>Getting started is simple</h2>
+        <p>Three easy steps between you and your first conversation.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step reveal">
+          <h3>Reach Out</h3>
+          <p>Book a free, no-pressure consultation call so we can hear what's bringing you in and answer your questions.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Find Your Fit</h3>
+          <p>We'll match you or your child with the right format and approach, and set a schedule that works for your family.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Begin to Bloom</h3>
+          <p>Start secure video sessions and begin building the practical, lasting skills that help you thrive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUOTE ===== -->
+  <section class="quote-band">
+    <div class="wrap quote reveal">
+      <blockquote>&ldquo;Growth doesn't happen all at once. With the right support, even the smallest branch can bloom.&rdquo;</blockquote>
+      <div class="attrib">— The Branch &amp; Bloom Philosophy</div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section id="contact" class="cta-final">
+    <!-- Four floating photos overlaying the section -->
+    <figure class="cta-float f1"><img src="images/hero-1.webp" alt="" loading="lazy"></figure>
+    <figure class="cta-float f2"><img src="images/hero-4.webp" alt="" loading="lazy"></figure>
+    <figure class="cta-float f3"><img src="images/hero-2.webp" alt="" loading="lazy"></figure>
+    <figure class="cta-float f4"><img src="images/hero-5.webp" alt="" loading="lazy"></figure>
+
+    <div class="wrap reveal">
+      <span class="eyebrow" style="justify-content:center;">Let's Begin</span>
+      <h2>Your next chapter <em>starts here.</em></h2>
+      <p>Reach out today for a free consultation — no pressure, no waiting room. We'd be honored to walk alongside you.</p>
+      <div class="hero-actions" style="justify-content:center;">
+        <a class="btn btn-fun" href="mailto:hello@branchandbloomcounseling.com">Book a Free Consult
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-cream" href="tel:+10000000000">Call Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="brand">
+            <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path d="M20 36V16" stroke="#FBF7F0" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M20 22C20 22 14 21 11 17C8 13 9 7 9 7C9 7 15 7 18 11C21 15 20 22 20 22Z" fill="#8FA98A"/>
+              <path d="M20 19C20 19 25 17 27 13C29 9 27 4 27 4C27 4 22 6 20 10C18 14 20 19 20 19Z" fill="#C68566"/>
+              <circle cx="20" cy="26" r="2.6" fill="#D9A566"/>
+            </svg>
+            Branch &amp; Bloom
+          </div>
+          <p class="blurb">Warm, evidence-based telehealth counseling for children, teens, and adults.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Individual Counseling</a></li>
+            <li><a href="#services">Family Counseling</a></li>
+            <li><a href="#services">Couples Counseling</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#who">Who We Help</a></li>
+            <li><a href="#approach">Our Approach</a></li>
+            <li><a href="#start">How It Works</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get In Touch</h4>
+          <ul>
+            <li><a href="mailto:hello@branchandbloomcounseling.com">hello@branchandbloomcounseling.com</a></li>
+            <li><a href="#contact">Book a Free Consult</a></li>
+            <li>Telehealth &middot; Secure Video</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Branch &amp; Bloom Counseling. All rights reserved.</span>
+        <span>Serving clients via secure telehealth.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Gentle scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Hero slider — autoplay with crossfade
+    (function () {
+      const slides = Array.from(document.querySelectorAll('.hero-slide'));
+      const dots = Array.from(document.querySelectorAll('.hero-dots button'));
+      if (slides.length < 2) return;
+      let i = 0, timer;
+      const INTERVAL = 4500;
+
+      function show(n) {
+        i = (n + slides.length) % slides.length;
+        slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+      }
+      function next() { show(i + 1); }
+      function start() { stop(); timer = setInterval(next, INTERVAL); }
+      function stop() { if (timer) clearInterval(timer); }
+
+      dots.forEach((d, idx) => d.addEventListener('click', () => { show(idx); start(); }));
+
+      // Pause on hover, and when the tab isn't visible
+      const slider = document.querySelector('.hero-slider');
+      slider.addEventListener('mouseenter', stop);
+      slider.addEventListener('mouseleave', start);
+      document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+
+      // Respect reduced-motion preference
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) start();
+    })();
+  </script>
+</body>
+</html>
